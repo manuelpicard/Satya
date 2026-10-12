@@ -256,4 +256,4 @@ Ich lege dafür ein separates **privates** Archiv-Repository an: Die vorhandenen
 
 ### Assistent — Abschluss
 
-Das private Archiv ist erstellt. Es enthält das sichtbare Gespräch, die Quellen und eine Zusammenfassung mit Standdaten. Die öffentliche Wallet-Adresse ist darin enthalten, private Schlüssel oder Wiederherstellungsphrasen nicht. [GitHub-Archiv öffnen](https://github.com/makopipokam/opera-celo-minipay-context/tree/main/context)
+Das private Archiv ist erstellt. Es enthält das sichtbare Gespräch, die Quellen und eine Zusammenfassung mit Standdaten. Die öffentliche Wallet-Adresse ist darin enthalten, private Schlüssel oder Wiederherstellungsphrasen nicht. [GitHub-Archiv öffnen](https://github.com/manuelpicard/opera-celo-minipay-context/tree/main/context)

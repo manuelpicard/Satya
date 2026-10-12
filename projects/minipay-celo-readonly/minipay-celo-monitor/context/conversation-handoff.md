@@ -93,10 +93,10 @@ Abfragen erfolgten über `https://forno.celo.org` und `https://celo.blockscout.c
 ## 6. GitHub-Entscheidung (2026-10-08 bis 2026-10-12)
 
 - Der Nutzer bat um einen passenden GitHub-Ordner.
-- Er genehmigte zunächst einen generischen Ordner ohne Wallet-Daten in `makopipokam/manualai.org`.
+- Er genehmigte zunächst einen generischen Ordner ohne Wallet-Daten in `manuelpicard/manualai.org`.
 - Danach bat er darum, den gesamten Gesprächsinhalt hochzuladen und bestätigte ausdrücklich den Upload sensibler Informationen in dem öffentlichen Repository.
 - Anschließend änderte er seine Präferenz: „doch lieber privat“.
-- Ergebnis: ein dediziertes privates Repo `https://github.com/makopipokam/minipay-celo-readonly`; **kein Inhalt wurde in `manualai.org` veröffentlicht**.
+- Ergebnis: ein dediziertes privates Repo `https://github.com/manuelpicard/minipay-celo-readonly`; **kein Inhalt wurde in `manualai.org` veröffentlicht**.
 - Dieser Kontext, der Originalauftrag, generischer Code und beide Berichtstände sind für die spätere Nutzung in `minipay-celo-monitor/` zusammengeführt.
 
 ## 7. Noch offene Aufgaben / sicher weiterarbeiten

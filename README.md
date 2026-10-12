@@ -11,8 +11,8 @@ Zentrales privates Repository für **Crypto-, Celo- und MiniPay-bezogene Projekt
 
 Die ursprünglichen Repositories bleiben als separate Quellen bestehen:
 
-- [`minipay-celo-readonly`](https://github.com/makopipokam/minipay-celo-readonly)
-- [`opera-celo-minipay-context`](https://github.com/makopipokam/opera-celo-minipay-context)
+- [`minipay-celo-readonly`](https://github.com/manuelpicard/minipay-celo-readonly)
+- [`opera-celo-minipay-context`](https://github.com/manuelpicard/opera-celo-minipay-context)
 
 ## Sicherheitsregeln
 

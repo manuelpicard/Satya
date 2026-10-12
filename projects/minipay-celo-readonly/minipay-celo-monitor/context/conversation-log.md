@@ -72,7 +72,7 @@ Weil das zuvor gewählte Repo öffentlich war, wurden E-Mail-Adresse, vollständ
 
 Diese spätere Präferenz ersetzte die vorherige Zustimmung zu einem öffentlichen Upload. Es wurde **nichts** in `manualai.org` veröffentlicht.
 
-Am 2026-10-12 wurde stattdessen ein dediziertes privates Repository angelegt: `https://github.com/makopipokam/minipay-celo-readonly`. Darin wird dieser Projektordner mit Quellcode, Originalanforderung, Übergabekontext und den beiden Berichtsständen abgelegt. Das Repository ist privat; GitHub-Kollaboratoren mit Zugriff können Inhalte sehen.
+Am 2026-10-12 wurde stattdessen ein dediziertes privates Repository angelegt: `https://github.com/manuelpicard/minipay-celo-readonly`. Darin wird dieser Projektordner mit Quellcode, Originalanforderung, Übergabekontext und den beiden Berichtsständen abgelegt. Das Repository ist privat; GitHub-Kollaboratoren mit Zugriff können Inhalte sehen.
 
 ## Aktueller Status bei Archivierung
 
