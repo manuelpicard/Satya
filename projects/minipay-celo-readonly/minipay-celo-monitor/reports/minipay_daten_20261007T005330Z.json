@@ -1,0 +1,359 @@
+{
+ "wallet": "0x107B8eA19996De0CC43A28A7F8ec9a0E529778B4",
+ "queried_at": "2026-10-07 00:53:30 UTC",
+ "chain_id": 42220,
+ "block": 79433654,
+ "block_time": "2026-10-07 00:53:32 UTC",
+ "window_label": "gesamter von Blockscout verfügbarer Verlauf",
+ "balances": {
+  "native": {
+   "asset": "CELO (nativ)",
+   "raw": "0",
+   "decimals": 18,
+   "formatted": "0",
+   "method": "eth_getBalance",
+   "block": 79433654
+  },
+  "tokens": {
+   "USDT": {
+    "key": "USDT",
+    "contract": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+    "symbol_onchain": "USD₮",
+    "decimals_onchain": 6,
+    "decimals_expected": 6,
+    "metadata_verified": true,
+    "raw": "12860923",
+    "formatted": "12.860923",
+    "method": "eth_call balanceOf/symbol/decimals",
+    "block": 79433654
+   },
+   "USDC": {
+    "key": "USDC",
+    "contract": "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
+    "symbol_onchain": "USDC",
+    "decimals_onchain": 6,
+    "decimals_expected": 6,
+    "metadata_verified": true,
+    "raw": "0",
+    "formatted": "0",
+    "method": "eth_call balanceOf/symbol/decimals",
+    "block": 79433654
+   },
+   "USDm": {
+    "key": "USDm",
+    "contract": "0x765DE816845861e75A25fCA122bb6898B8B1282a",
+    "symbol_onchain": "USDm",
+    "decimals_onchain": 18,
+    "decimals_expected": 18,
+    "metadata_verified": true,
+    "raw": "0",
+    "formatted": "0",
+    "method": "eth_call balanceOf/symbol/decimals",
+    "block": 79433654
+   },
+   "EURm": {
+    "key": "EURm",
+    "contract": "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73",
+    "symbol_onchain": "EURm",
+    "decimals_onchain": 18,
+    "decimals_expected": 18,
+    "metadata_verified": true,
+    "raw": "0",
+    "formatted": "0",
+    "method": "eth_call balanceOf/symbol/decimals",
+    "block": 79433654
+   }
+  },
+  "errors": []
+ },
+ "other_tokens": [],
+ "vaults": [
+  {
+   "key": "mpAaveUSDT",
+   "label": "MiniPay Aave V3 USDT",
+   "contract": "0xbaD4711D689329E315Be3E7C1C64CF652868C56c",
+   "block": 79433654,
+   "block_time": "2026-10-07 00:53:32 UTC",
+   "symbol_onchain": "mpAaveUSDT",
+   "name_onchain": "MiniPay Aave V3 USDT",
+   "decimals": 6,
+   "asset": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+   "asset_is_verified_usdt": true,
+   "shares_raw": "0",
+   "shares": "0",
+   "totalAssets_usdt": "4393.586913",
+   "events_complete": true,
+   "event_errors": [],
+   "events_source": "Blockscout getLogs (gesamter Verlauf, nach Topics gefiltert)",
+   "deposits": [],
+   "deposits_paid_for_others": [],
+   "withdrawals": [],
+   "withdrawals_received_from_other_owner": [],
+   "share_transfers_in": [],
+   "share_transfers_out": [],
+   "sum_deposits_usdt": "0",
+   "sum_withdrawals_usdt": "0",
+   "net_shares_from_events": "0",
+   "shares_match_onchain": true,
+   "cost_basis_reconstructable": false,
+   "reconstruction_notes": [
+    "keine Einzahlungs- oder Auszahlungsereignisse"
+   ],
+   "has_position": false
+  },
+  {
+   "key": "mpFeatherUSDT",
+   "label": "MiniPay Morpho Feather USDT",
+   "contract": "0x440933053Fb430cABf8152F59F5967cE0FeB5f15",
+   "block": 79433654,
+   "block_time": "2026-10-07 00:53:32 UTC",
+   "symbol_onchain": "mpFeatherUSDT",
+   "name_onchain": "MiniPay Morpho Feather USDT",
+   "decimals": 6,
+   "asset": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+   "asset_is_verified_usdt": true,
+   "shares_raw": "0",
+   "shares": "0",
+   "totalAssets_usdt": "1090.627166",
+   "events_complete": false,
+   "event_errors": [
+    "Primärquelle getLogs fehlgeschlagen (share_in: Blockscout v1 GET fehlgeschlagen: HTTP 429 (Rate-Limit)); Ausweichroute verwendet"
+   ],
+   "events_source": "Fallback: /transactions/{hash}/logs (nur abgefragter Zeitraum)",
+   "deposits": [],
+   "deposits_paid_for_others": [],
+   "withdrawals": [],
+   "withdrawals_received_from_other_owner": [],
+   "share_transfers_in": [],
+   "share_transfers_out": [],
+   "sum_deposits_usdt": "0",
+   "sum_withdrawals_usdt": "0",
+   "net_shares_from_events": "0",
+   "shares_match_onchain": true,
+   "cost_basis_reconstructable": false,
+   "reconstruction_notes": [
+    "Ereignisabfrage unvollständig",
+    "keine Einzahlungs- oder Auszahlungsereignisse"
+   ],
+   "has_position": false
+  }
+ ],
+ "rows": [
+  {
+   "timestamp": 1791265364.0,
+   "block": 79364606,
+   "tx": "0xc1e90a4ae38eb3a751065bf0e83187e2c56e7d0b14f58fef3fd5f30d6270b5cc",
+   "log_index": 680,
+   "from": "0x5CDF62f29478C4B215a3Ba21059A2B3cb7d44b62",
+   "to": "0x107B8eA19996De0CC43A28A7F8ec9a0E529778B4",
+   "direction": "in",
+   "token_contract": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+   "token_symbol_blockscout": "USDT",
+   "token_type": "ERC-20",
+   "raw": "9773",
+   "decimals": "6",
+   "amount": "0.009773",
+   "bs_type": "token_transfer",
+   "method": "0xe299d311",
+   "verified_token": "USDT",
+   "vault_token": null,
+   "from_is_contract": true,
+   "from_name": null,
+   "category": "Möglicher MiniPay-Boost-Ertrag – nicht abschließend zuordenbar",
+   "confidence": "Annahme (Muster), nicht offiziell bestätigt",
+   "reason": "Absender sendet regelmäßig im ~24-h-Takt (4 Eingänge an 4 Tagen, Regelmäßigkeit 100 %), Einzelbeträge ≤ 10 USDT, keine Rückzahlungen an den Absender, Absender ist Massenauszahler (266111231 Token-Transfers). Kein offiziell veröffentlichter Boost-Auszahler on-chain verifiziert."
+  },
+  {
+   "timestamp": 1791177539.0,
+   "block": 79276781,
+   "tx": "0x0996e0c5af4ba052de843eb8fc5059d4d98880e244e076163cefa70ec861877d",
+   "log_index": 438,
+   "from": "0x5CDF62f29478C4B215a3Ba21059A2B3cb7d44b62",
+   "to": "0x107B8eA19996De0CC43A28A7F8ec9a0E529778B4",
+   "direction": "in",
+   "token_contract": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+   "token_symbol_blockscout": "USDT",
+   "token_type": "ERC-20",
+   "raw": "10980",
+   "decimals": "6",
+   "amount": "0.01098",
+   "bs_type": "token_transfer",
+   "method": "0xe299d311",
+   "verified_token": "USDT",
+   "vault_token": null,
+   "from_is_contract": true,
+   "from_name": null,
+   "category": "Möglicher MiniPay-Boost-Ertrag – nicht abschließend zuordenbar",
+   "confidence": "Annahme (Muster), nicht offiziell bestätigt",
+   "reason": "Absender sendet regelmäßig im ~24-h-Takt (4 Eingänge an 4 Tagen, Regelmäßigkeit 100 %), Einzelbeträge ≤ 10 USDT, keine Rückzahlungen an den Absender, Absender ist Massenauszahler (266111231 Token-Transfers). Kein offiziell veröffentlichter Boost-Auszahler on-chain verifiziert."
+  },
+  {
+   "timestamp": 1791091366.0,
+   "block": 79190608,
+   "tx": "0x02f62f11f8bcc23786c33d7a2e7eb3784daf9519c42948976c17996b58bcc227",
+   "log_index": 276,
+   "from": "0x5CDF62f29478C4B215a3Ba21059A2B3cb7d44b62",
+   "to": "0x107B8eA19996De0CC43A28A7F8ec9a0E529778B4",
+   "direction": "in",
+   "token_contract": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+   "token_symbol_blockscout": "USDT",
+   "token_type": "ERC-20",
+   "raw": "10966",
+   "decimals": "6",
+   "amount": "0.010966",
+   "bs_type": "token_transfer",
+   "method": "0xe299d311",
+   "verified_token": "USDT",
+   "vault_token": null,
+   "from_is_contract": true,
+   "from_name": null,
+   "category": "Möglicher MiniPay-Boost-Ertrag – nicht abschließend zuordenbar",
+   "confidence": "Annahme (Muster), nicht offiziell bestätigt",
+   "reason": "Absender sendet regelmäßig im ~24-h-Takt (4 Eingänge an 4 Tagen, Regelmäßigkeit 100 %), Einzelbeträge ≤ 10 USDT, keine Rückzahlungen an den Absender, Absender ist Massenauszahler (266111231 Token-Transfers). Kein offiziell veröffentlichter Boost-Auszahler on-chain verifiziert."
+  },
+  {
+   "timestamp": 1791004606.0,
+   "block": 79103848,
+   "tx": "0x42b429343ffac179428ced53870a52b1f266171558f2e48887232801c8efae8b",
+   "log_index": 512,
+   "from": "0x5CDF62f29478C4B215a3Ba21059A2B3cb7d44b62",
+   "to": "0x107B8eA19996De0CC43A28A7F8ec9a0E529778B4",
+   "direction": "in",
+   "token_contract": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+   "token_symbol_blockscout": "USDT",
+   "token_type": "ERC-20",
+   "raw": "10952",
+   "decimals": "6",
+   "amount": "0.010952",
+   "bs_type": "token_transfer",
+   "method": "0xe299d311",
+   "verified_token": "USDT",
+   "vault_token": null,
+   "from_is_contract": true,
+   "from_name": null,
+   "category": "Möglicher MiniPay-Boost-Ertrag – nicht abschließend zuordenbar",
+   "confidence": "Annahme (Muster), nicht offiziell bestätigt",
+   "reason": "Absender sendet regelmäßig im ~24-h-Takt (4 Eingänge an 4 Tagen, Regelmäßigkeit 100 %), Einzelbeträge ≤ 10 USDT, keine Rückzahlungen an den Absender, Absender ist Massenauszahler (266111231 Token-Transfers). Kein offiziell veröffentlichter Boost-Auszahler on-chain verifiziert."
+  },
+  {
+   "timestamp": 1790944725.0,
+   "block": 79043967,
+   "tx": "0xfc1f2276dd4b060096a361c588140058f6c3e510e8388f0344789ecc5b7e72df",
+   "log_index": 2,
+   "from": "0xc9b29db51142b00E697385092b80efc57402a2b6",
+   "to": "0x107B8eA19996De0CC43A28A7F8ec9a0E529778B4",
+   "direction": "in",
+   "token_contract": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+   "token_symbol_blockscout": "USDT",
+   "token_type": "ERC-20",
+   "raw": "12818252",
+   "decimals": "6",
+   "amount": "12.818252",
+   "bs_type": "token_transfer",
+   "method": "0xbb85ba74",
+   "verified_token": "USDT",
+   "vault_token": null,
+   "from_is_contract": true,
+   "from_name": "DaimoPayExecutor",
+   "category": "On-Ramp / Bridge / Dienstleister (möglich)",
+   "confidence": "niedrig",
+   "reason": "Absender ist ein Smart Contract; Blockscout-Name „DaimoPayExecutor“ (Drittangabe); Absender mit sehr vielen Transfers (98417), aber ohne Boost-Muster."
+  }
+ ],
+ "native_incoming": [],
+ "tt_meta": {
+  "pages": 1,
+  "complete": true,
+  "count": 5
+ },
+ "boost": {
+  "24 Stunden": {
+   "count": 1,
+   "sum": "0.009773",
+   "first": "2026-10-06 05:42:44 UTC",
+   "last": "2026-10-06 05:42:44 UTC"
+  },
+  "7 Tage": {
+   "count": 4,
+   "sum": "0.042671",
+   "first": "2026-10-03 05:16:46 UTC",
+   "last": "2026-10-06 05:42:44 UTC"
+  },
+  "30 Tage": {
+   "count": 4,
+   "sum": "0.042671",
+   "first": "2026-10-03 05:16:46 UTC",
+   "last": "2026-10-06 05:42:44 UTC"
+  },
+  "Gesamt (abgefragter Verlauf)": {
+   "count": 4,
+   "sum": "0.042671",
+   "first": "2026-10-03 05:16:46 UTC",
+   "last": "2026-10-06 05:42:44 UTC"
+  }
+ },
+ "class_meta": {
+  "sender_eval": {
+   "0x5cdf62f29478c4b215a3ba21059a2b3cb7d44b62": {
+    "sender": "0x5CDF62f29478C4B215a3Ba21059A2B3cb7d44b62",
+    "n": 4,
+    "distinct_days": 4,
+    "regular_share": 1.0,
+    "median_interval_h": 24.1,
+    "max_single": "0.01098",
+    "max_rolling_7d": "0.042671",
+    "user_sent_to_sender": false,
+    "pattern_match": true,
+    "profile": {
+     "looked_up": true,
+     "is_contract": true,
+     "name": null,
+     "public_tags": [],
+     "metadata_tags": [],
+     "is_scam": false,
+     "is_verified_contract": false,
+     "token_transfers_count": 266111231,
+     "transactions_count": 2632677
+    },
+    "distributor_profile": true
+   },
+   "0xc9b29db51142b00e697385092b80efc57402a2b6": {
+    "sender": "0xc9b29db51142b00E697385092b80efc57402a2b6",
+    "n": 1,
+    "distinct_days": 1,
+    "regular_share": 0.0,
+    "median_interval_h": null,
+    "max_single": "12.818252",
+    "max_rolling_7d": "12.818252",
+    "user_sent_to_sender": false,
+    "pattern_match": false
+   }
+  },
+  "boost_senders": [
+   "0x5cdf62f29478c4b215a3ba21059a2b3cb7d44b62"
+  ]
+ },
+ "gaps": [
+  "Vault-Ereignisse mpFeatherUSDT: möglicherweise unvollständig. Quelle: Fallback: /transactions/{hash}/logs (nur abgefragter Zeitraum). Hinweise: Primärquelle getLogs fehlgeschlagen (share_in: Blockscout v1 GET fehlgeschlagen: HTTP 429 (Rate-Limit)); Ausweichroute verwendet",
+  "Für MiniPay Boost ist kein offizieller Auszahler on-chain verifiziert oder öffentlich dokumentiert; Boost-Zuordnungen sind Annahmen.",
+  "Historische Bestände zu früheren Blöcken wurden nicht rekonstruiert. Eine effektive Boost-Rendite pro Woche wird deshalb nicht berechnet.",
+  "Gasgebühren, die MiniPay in Stablecoins zahlt (Celo Fee Abstraction), erscheinen nicht zwingend als Token-Transfer. Der Bericht rekonstruiert keine Salden aus Transfers.",
+  "Blockscout-Namen und -Tags sind Drittangaben und gelten nicht als offizielle Verifizierung.",
+  "Weitere, hier nicht konfigurierte Earn-Vaults oder Strategien werden nicht erfasst. Geprüft wurden nur mpAaveUSDT und mpFeatherUSDT.",
+  "Transfers nach dem Referenzblock bleiben unberücksichtigt, damit Bestände und Historie konsistent sind."
+ ],
+ "audit": {
+  "rpc": {
+   "eth_chainId": 1,
+   "eth_blockNumber": 1,
+   "eth_getBlockByNumber": 1,
+   "eth_getCode": 1,
+   "eth_getBalance": 1,
+   "eth_call": 24
+  },
+  "http_get": {
+   "blockscout_api_v2": 9,
+   "blockscout_api_v1_getLogs": 11
+  }
+ }
+}

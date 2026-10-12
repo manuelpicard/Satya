@@ -1,0 +1,138 @@
+{
+  "queried_at_utc": "2026-10-02 10:55:43 UTC",
+  "chain_id": 42220,
+  "reference_block": 79037788,
+  "reference_block_time_utc": "2026-10-02 10:55:46 UTC",
+  "tokens": {
+    "USDT": {
+      "address": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+      "checksum_ok": true,
+      "has_code": true,
+      "name": "Tether USD",
+      "symbol": "USD₮",
+      "decimals": 6,
+      "decimals_expected": 6,
+      "decimals_ok": true,
+      "symbol_ok": true,
+      "blockscout_token_name": "Tether",
+      "blockscout_symbol": "USDT",
+      "blockscout_type": "ERC-20",
+      "blockscout_holders": "20850870",
+      "blockscout_verified_source": true,
+      "blockscout_contract_name": "TransparentUpgradeableProxy",
+      "verified": true
+    },
+    "USDC": {
+      "address": "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
+      "checksum_ok": true,
+      "has_code": true,
+      "name": "USDC",
+      "symbol": "USDC",
+      "decimals": 6,
+      "decimals_expected": 6,
+      "decimals_ok": true,
+      "symbol_ok": true,
+      "blockscout_token_name": "USDC",
+      "blockscout_symbol": "USDC",
+      "blockscout_type": "ERC-20",
+      "blockscout_holders": "99895",
+      "blockscout_verified_source": true,
+      "blockscout_contract_name": "FiatTokenProxy",
+      "verified": true
+    },
+    "USDm": {
+      "address": "0x765DE816845861e75A25fCA122bb6898B8B1282a",
+      "checksum_ok": true,
+      "has_code": true,
+      "name": "Mento Dollar",
+      "symbol": "USDm",
+      "decimals": 18,
+      "decimals_expected": 18,
+      "decimals_ok": true,
+      "symbol_ok": true,
+      "blockscout_token_name": "Celo Dollar",
+      "blockscout_symbol": "CUSD",
+      "blockscout_type": "ERC-20",
+      "blockscout_holders": "5853396",
+      "blockscout_verified_source": true,
+      "blockscout_contract_name": "StableTokenProxy",
+      "verified": true
+    },
+    "EURm": {
+      "address": "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73",
+      "checksum_ok": true,
+      "has_code": true,
+      "name": "Mento Euro",
+      "symbol": "EURm",
+      "decimals": 18,
+      "decimals_expected": 18,
+      "decimals_ok": true,
+      "symbol_ok": true,
+      "blockscout_token_name": "Celo Euro",
+      "blockscout_symbol": "CEUR",
+      "blockscout_type": "ERC-20",
+      "blockscout_holders": "24213",
+      "blockscout_verified_source": true,
+      "blockscout_contract_name": "SortedOraclesProxy",
+      "verified": true
+    }
+  },
+  "vaults": {
+    "mpAaveUSDT": {
+      "address": "0xbaD4711D689329E315Be3E7C1C64CF652868C56c",
+      "label_expected": "MiniPay Aave V3 USDT",
+      "checksum_ok": true,
+      "has_code": true,
+      "name": "MiniPay Aave V3 USDT",
+      "symbol": "mpAaveUSDT",
+      "decimals": 6,
+      "asset": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+      "asset_is_usdt": true,
+      "totalAssets_raw": "4188509271",
+      "totalAssets_usdt": "4188.509271",
+      "totalSupply_raw": "4167412785",
+      "totalSupply_shares": "4167.412785",
+      "convertToAssets_1share_raw": "1005062",
+      "usdt_per_share": "1.005062",
+      "previewRedeem_1share_usdt": "1.005062",
+      "blockscout_verified_source": true,
+      "blockscout_contract_name": "VaultBeaconProxy",
+      "blockscout_is_proxy": true,
+      "blockscout_implementations": [
+        {
+          "address_hash": "0xD74078dA48facb8273395Ef51cbC64456566ad96",
+          "name": "Vault"
+        }
+      ],
+      "verified": true
+    },
+    "mpFeatherUSDT": {
+      "address": "0x440933053Fb430cABf8152F59F5967cE0FeB5f15",
+      "label_expected": "MiniPay Morpho Feather USDT",
+      "checksum_ok": true,
+      "has_code": true,
+      "name": "MiniPay Morpho Feather USDT",
+      "symbol": "mpFeatherUSDT",
+      "decimals": 6,
+      "asset": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+      "asset_is_usdt": true,
+      "totalAssets_raw": "1649681850",
+      "totalAssets_usdt": "1649.68185",
+      "totalSupply_raw": "1648811662",
+      "totalSupply_shares": "1648.811662",
+      "convertToAssets_1share_raw": "1000527",
+      "usdt_per_share": "1.000527",
+      "previewRedeem_1share_usdt": "1.000527",
+      "blockscout_verified_source": true,
+      "blockscout_contract_name": "VaultBeaconProxy",
+      "blockscout_is_proxy": true,
+      "blockscout_implementations": [
+        {
+          "address_hash": "0xD74078dA48facb8273395Ef51cbC64456566ad96",
+          "name": "Vault"
+        }
+      ],
+      "verified": true
+    }
+  }
+}

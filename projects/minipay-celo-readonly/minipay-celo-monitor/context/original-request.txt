@@ -1,0 +1,90 @@
+Ich möchte die eingehenden Celo-Werte meiner MiniPay-Wallet transparent und sicher über meinen Manus-Account mit der E-Mail-Adresse manuel.picard@web.de verwalten lassen. Die Verbindung muss zunächst strikt nur lesend sein; sie darf weder Transaktionen signieren noch Gelder senden, tauschen, anlegen, auszahlen oder Einstellungen in MiniPay beziehungsweise Opera verändern.
+
+Ziel
+
+1. Richte für meinen Manus-Account eine Nur-Lese-Überwachung meiner MiniPay-Wallet auf Celo Mainnet ein.
+2. Ermittle und dokumentiere eingehende Werte, aktuelle Bestände und insbesondere Erträge aus MiniPay Boost sowie Ein- und Auszahlungen aus MiniPay Earn.
+3. Stelle die Daten nachvollziehbar bereit, ohne Zugangsdaten, private Schlüssel oder Wiederherstellungsphrasen anzufordern oder zu speichern.
+4. Jede künftig gewünschte Aktion mit echten Vermögenswerten muss separat beschrieben und von mir ausdrücklich bestätigt werden; eine öffentliche Wallet-Adresse allein berechtigt niemals dazu.
+
+Benötigte Angaben von mir
+
+1. Ich liefere ausschließlich meine öffentliche Celo-Wallet-Adresse im vollständigen Format 0x… mit 42 Zeichen. Vor der Auswertung muss die Adresse syntaktisch geprüft und mir zur Bestätigung angezeigt werden.
+2. Ich entscheide, was „verwalten“ bedeuten soll. Standardmäßig bedeutet es Überwachen, Auswerten und Berichten. Es bedeutet ausdrücklich nicht, Vermögenswerte zu bewegen oder DeFi-Transaktionen auszuführen.
+3. Falls ich Benachrichtigungen wünsche, lege ich vorher Kanal und Auslöser fest, beispielsweise eine tägliche Übersicht oder eine Meldung bei einem eingehenden Betrag ab 1 USDT. Ohne diese Festlegung bleibt es bei manuellen Statusabfragen.
+
+Sicherheitsgrenzen
+
+1. Frage nie nach meinem MiniPay-Passwort, Opera-Passwort, privaten Schlüssel, Seed Phrase, Wiederherstellungsphrase, SMS-Code oder einem 2FA-Code. Ich gebe solche Daten niemals weiter.
+2. Speichere nur die öffentliche Wallet-Adresse und ausschließlich, wenn ich der Zuordnung zu manuel.picard@web.de ausdrücklich zustimme.
+3. Verwende keine Signaturaufforderung, keine Wallet-Verbindung mit Schreibrechten und keine Smart-Contract-Aufrufe, die eine Transaktion erzeugen könnten.
+4. Kennzeichne alle Beträge als On-Chain-Beobachtung. Eine Eintragung auf der Blockchain allein beweist nicht, dass sie von MiniPay, Opera oder einem bestimmten Programm stammt.
+5. Weise darauf hin, dass öffentliche Blockchain-Daten einsehbar sind und die Zuordnung der Adresse zu meinem Manus-Account datenschutzrelevant ist.
+
+Technische Datenquelle und Prüfung
+
+1. Arbeite ausschließlich auf Celo Mainnet mit Chain-ID 42220. Als RPC kann https://forno.celo.org genutzt werden; für Transaktions- und Token-Historien kann die Celo-Blockscout-API unter https://celo.blockscout.com/api/v2 verwendet werden.
+2. Prüfe nach dem Einreichen meiner Adresse die Chain-ID und führe nur Lesemethoden aus, insbesondere eth_getBalance, eth_call und den Abruf von Token-Transferhistorien.
+3. Lies native CELO-Bestände über eth_getBalance aus. Berechne die Anzeige mit 18 Dezimalstellen.
+4. Lies die folgenden verifizierten relevanten Tokenbestände über ERC-20 balanceOf aus und verifiziere vor der Anzeige jeweils Symbol und Dezimalstellen direkt über den Vertrag:
+   USDT: 0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e, 6 Dezimalstellen, On-Chain-Symbol USD₮.
+   USDC: 0xcebA9300f2b948710d2653dD7B07f33A8B32118C, 6 Dezimalstellen.
+   USDm, früher cUSD: 0x765DE816845861e75A25fCA122bb6898B8B1282a, 18 Dezimalstellen.
+   EURm, früher cEUR: 0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73, 18 Dezimalstellen.
+5. Weise deutlich darauf hin, dass Token mit gleich aussehenden Namen, Symbolen oder unerwarteten Contract-Adressen nicht automatisch als echte Guthaben gelten dürfen. Solche Token sind getrennt als „unverifiziert“ auszuweisen und nicht in die Gesamtsumme einzurechnen.
+
+MiniPay Boost auswerten
+
+1. Berücksichtige, dass MiniPay Boost nach den derzeitigen Bedingungen automatisch täglich ausgeschüttet wird und sich auf USDT bezieht. Die Bedingungen nennen bis zu 2 % pro Woche, einen Höchstwert von 10 USDT pro Woche sowie eine Mindesthaltung von 1 USDT; konkrete Erträge können von Nutzung, Aktivität und Änderungen der Programmregeln abhängen.
+2. Ermittle eingehende USDT-ERC-20-Transfers an meine bestätigte Adresse über Blockscout. Erfasse mindestens Zeitstempel, Blocknummer, Transaktionshash, Absender, Tokenvertrag, Rohbetrag, Dezimalstellen und formatierten Betrag.
+3. Bezeichne einen eingehenden USDT-Transfer nur dann als „möglicher MiniPay-Boost-Ertrag“, wenn seine Regelmäßigkeit, sein zeitlicher Kontext und nachprüfbare Absender- oder Programminformationen dies stützen. Ist der Auszahler nicht offiziell on-chain verifiziert, muss die Kennzeichnung „nicht abschließend zuordenbar“ lauten.
+4. Fasse mögliche Boost-Erträge für 24 Stunden, 7 Tage, 30 Tage und den gesamten verfügbaren Verlauf zusammen. Trenne sie von normalen P2P-Eingängen, On-Ramps, Rückzahlungen und unbekannten Transfers.
+5. Vergleiche die tatsächlichen Ausschüttungen nicht unkritisch mit dem beworbenen Maximalwert. Die 2 % pro Woche sind kein garantierter Satz; sie können sich ändern und stehen unter Bedingungen.
+
+MiniPay Earn auswerten
+
+1. Unterscheide MiniPay Boost vom separaten MiniPay-Earn-Angebot. MiniPay Earn ist eine DeFi-Anwendung innerhalb des MiniPay-Ökosystems, die nach veröffentlichten Informationen Ein- und Auszahlungen von USDT in renditetragende Strategien ermöglicht. Solche Anlagen sind nicht gleichbedeutend mit einer täglichen Boost-Ausschüttung.
+2. Prüfe, ob meine Wallet Anteile an den bekannten MiniPay-USDT-Vaults hält. Die aktuell identifizierten ERC-4626-Vaults sind:
+   MiniPay Aave V3 USDT, mpAaveUSDT: 0xbaD4711D689329E315Be3E7C1C64CF652868C56c.
+   MiniPay Morpho Feather USDT, mpFeatherUSDT: 0x440933053Fb430cABf8152F59F5967cE0FeB5f15.
+3. Für jeden gehaltenen Vault-Anteil lese die Share-Balance, die zugrunde liegende Anlage über asset(), den Gegenwert über convertToAssets oder previewRedeem sowie optional totalAssets aus. Die Basisanlage beider genannten Vaults ist USDT.
+4. Gib für jeden Vault getrennt aus: gehaltene Shares, geschätzter aktueller USDT-Gegenwert, Zeitpunkt und Blockhöhe der Abfrage sowie die Aussage, dass der Gegenwert sich bis zu einer tatsächlichen Rückgabe ändern kann.
+5. Werte historische Deposit-, Withdraw-, Mint- und Redeem-Ereignisse aus. Berichte Einzahlungen, Auszahlungen, aktuelle Position und eine nachvollziehbare Veränderung des Gegenwerts. Gewinne dürfen nur als geschätzt ausgewiesen werden, wenn Kostenbasis, Zeitpunkte und alle Bewegungen zuverlässig rekonstruierbar sind.
+6. Interpretiere einen Contract- oder Token-Namen niemals als Sicherheitsgarantie. Kennzeichne, dass MiniPay Earn Drittanbieter- und DeFi-Risiken beinhaltet, sich Smart-Contract- und Liquiditätsrisiken ergeben können und vergangene Renditen keine Zusage darstellen.
+
+Ablauf nach Übergabe meiner öffentlichen Adresse
+
+1. Prüfe zuerst die Adresse auf Format und fasse sie zur Bestätigung gekürzt zusammen, beispielsweise 0x1234…abcd. Starte die Abfrage erst nach dieser Bestätigung.
+2. Ermittle die aktuelle Celo-Blockhöhe und sichere sie als Referenz für den Bericht.
+3. Lies CELO und die festgelegten Stablecoin-Bestände ab. Verifiziere Tokenmetadaten direkt auf der Chain.
+4. Rufe die Token-Transferhistorie der Adresse über Blockscout ab. Verwende Pagination, bis der von mir bestimmte Zeitraum vollständig abgedeckt ist oder transparent angegeben wird, dass die Datenquelle die Historie begrenzt.
+5. Klassifiziere die Transfers transparent in bestätigte USDT-Eingänge, unbekannte Eingänge, mögliche Boost-Erträge, Vault-Einzahlungen, Vault-Auszahlungen und sonstige Bewegungen. Jeder Klassifikation ist eine Begründung beizufügen.
+6. Prüfe die genannten Earn-Vaults und füge ihre aktuellen geschätzten USDT-Werte separat hinzu.
+7. Erstelle einen kompakten Bericht für meinen Manus-Account. Der Bericht enthält keine geheimen Daten und verlinkt jede relevante Bewegung mit Transaktionshash und Celo-Blockscout-Explorer.
+8. Frage nach dem ersten Bericht, ob ich ausschließlich manuell abrufen oder eine fest definierte reine Benachrichtigungsroutine wünsche. Eine Benachrichtigung darf keine Finanzentscheidung automatisch auslösen.
+
+Berichtsformat
+
+1. Zeige oben Abfragezeitpunkt in UTC, Celo Mainnet, Chain-ID 42220, bestätigte gekürzte Wallet-Adresse und Referenzblock.
+2. Zeige anschließend getrennt den nativen CELO-Bestand, die verifizierten Stablecoin-Bestände sowie die geschätzten Positionen in MiniPay-Earn-Vaults.
+3. Führe eingehende Werte in einer Transaktionsübersicht mit Datum/Uhrzeit, Betrag, Asset, Absender, Kategorie, Sicherheit der Zuordnung und Explorer-Link auf.
+4. Fasse mögliche MiniPay-Boost-Erträge für 24 Stunden, 7 Tage, 30 Tage und insgesamt zusammen. Markiere nicht eindeutig nachweisbare Zuordnungen konsequent als Annahme.
+5. Führe bei Earn getrennt die gehaltenen Vault-Shares, geschätzten USDT-Gegenwerte und alle erkannten Deposit- oder Redeem-Vorgänge auf.
+6. Dokumentiere Datenlücken, API-Fehler, unbestätigte Token, methodische Annahmen sowie Risiken klar im Bericht.
+
+Entscheidungspunkte
+
+1. Wenn meine öffentliche Adresse fehlt, darf keine walletbezogene Abfrage oder dauerhafte Zuordnung vorgenommen werden. Fordere ausschließlich die 0x-Adresse an.
+2. Wenn eine Adresse nicht gültig ist oder nicht zu Celo Mainnet passt, stoppe die Auswertung und bitte um Korrektur.
+3. Wenn eine eingehende USDT-Transaktion keinem offiziellen Auszahler nachweisbar zugeordnet werden kann, kategorisiere sie nicht definitiv als MiniPay Boost.
+4. Wenn meine Wallet keine Vault-Shares hält, melde „keine erkennbare Position in den geprüften MiniPay-Earn-Vaults“ statt null Rendite zu behaupten.
+5. Wenn ich künftig Geld senden, USDT in einen Earn-Vault einzahlen, Assets abheben, tauschen oder verkaufen möchte, ist dies ein neuer, schreibender Vorgang. Beschreibe dann erst Betrag, Ziel, Gebühren, Risiken und Konsequenzen und fordere danach eine separate, explizite Freigabe in meiner eigenen Wallet an. Führe nichts allein auf Basis dieser Nur-Lese-Verbindung aus.
+
+Erfolgskriterien
+
+1. Meine bestätigte öffentliche Wallet-Adresse ist sicher meinem Manus-Account manuel.picard@web.de zugeordnet, ohne dass Geheimnisse gespeichert wurden.
+2. Die Verbindung nutzt nur öffentlich einsehbare Celo-Mainnet-Daten und erzeugt keine Transaktion.
+3. Der Bericht enthält aktuelle verifizierte Bestände, nachvollziehbare eingehende Transfers und getrennte Angaben zu möglichen Boost-Erträgen sowie MiniPay-Earn-Positionen.
+4. Jede Zahl ist mit Quelle, Zeitpunkt, Blockreferenz und bei Bewegungen mit Transaktionshash nachvollziehbar.
+5. Unklare oder nicht verifizierte Daten sind sichtbar als solche markiert; es werden keine falschen Gewissheiten über Erträge, Eigentum oder Auszahlungsquellen erzeugt.
+6. Es findet keine Übertragung, Anlage, Auszahlung oder andere Verfügung über Vermögenswerte statt, solange ich nicht einen neuen Vorgang ausdrücklich freigebe und diesen in meiner eigenen Wallet bestätige.
