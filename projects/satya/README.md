@@ -5,6 +5,7 @@ Dieses Verzeichnis bewahrt einen für zukünftige KI-Sitzungen aufbereiteten Sat
 ## Inhalt
 
 - [`context/conversation-handoff.md`](context/conversation-handoff.md) — erhaltene Nutzeranforderungen, technische Entscheidungen, Projekt- und Teststatus, Hackathon-Voraussetzungen, Sicherheitsgrenzen und nächste Schritte.
+- [`context/module-inventory.md`](context/module-inventory.md) — geprüfte Modulkarte für Python-Engine/API, Next.js-dApp, Solidity-Verträge, Tests und Demo; enthält Verantwortlichkeiten, Status, Quellbaumgrenzen und Datenschutzkorrekturen.
 
 ## Wiederverwendung
 

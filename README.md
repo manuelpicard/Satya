@@ -8,7 +8,7 @@ Zentrales privates Repository für **Crypto-, Celo- und MiniPay-bezogene Projekt
 
 - `projects/minipay-celo-readonly/` — Nur-Lese-Monitor für Celo/MiniPay einschließlich Projektdokumentation und archivierten Berichten.
 - `projects/opera-celo-minipay-context/` — privates Kontext- und Recherchearchiv zu Opera, CELO Rewards und MiniPay.
-- `projects/satya/` — privates Satya-Gesprächs- und Projekthandoff mit erhaltenen Nutzerzielen, Architektur, Tests, Hackathon-Readiness und offenen Punkten.
+- `projects/satya/` — privates Satya-Gesprächs- und Projekthandoff plus Modulkarte für Python, Frontend, Solidity, Tests und Demo.
 
 Die ursprünglichen Repositories bleiben als separate Quellen bestehen:
 

@@ -3,19 +3,19 @@
 **Stand:** 14. Oktober 2026
 **Zweck:** Dauerhafte, weiterverwendbare Übergabe zu Satya: Nutzerziele, Entscheidungen, Architektur, verifizierter Projektstand, Grenzen und nächste Schritte.
 
-> **Archivhinweis:** Dies ist eine kuratierte Projekterinnerung aus dem in der aktuellen Sitzung verfügbaren Verlauf. Frühere Gesprächsteile wurden beim Sitzungswechsel zusammengefasst; daher ist dies kein wortgetreues Volltranskript aller historischen Assistentenantworten. Verfügbare ursprüngliche Nutzerformulierungen sind unten erhalten. Interne System-/Entwicklerinstruktionen, Zugangsdaten, persönliche Wallet-Schlüssel und private Tooldaten gehören nicht in dieses öffentliche Archiv.
+> **Archivhinweis:** Dies ist eine kuratierte Projekterinnerung aus dem in der aktuellen Sitzung verfügbaren Verlauf. Frühere Gesprächsteile wurden beim Sitzungswechsel zusammengefasst; daher ist dies kein wortgetreues Volltranskript aller historischen Assistentenantworten. Verfügbare ursprüngliche Nutzerformulierungen sind unten erhalten. Interne System-/Entwicklerinstruktionen, Zugangsdaten, persönliche Wallet-Schlüssel und private Tooldaten gehören nicht in dieses private Archiv.
 
 ## Projektziel und feste Produktgrenzen
 
-Satya ist ein Celo-basiertes System zur nachvollziehbaren Herkunftserklärung von digitalen Inhalten. Es soll prüfbare, signierte Aussagen an einen Content-Hash binden und bei Bedarf pro Anfrage bezahlte Prüfungen über x402 bereitstellen. Der Schwerpunkt ist **Provenienz und Rechenschaft**, nicht ein universeller KI-Detektor.
+Satya ist ein Celo-basiertes System zur nachvollziehbaren Herkunftserklärung von digitalen Inhalten. Es bindet prüfbare, signierte Aussagen an einen Content-Hash und kann pro Anfrage einen bezahlten Prüfservice über x402 anbieten. Der Schwerpunkt ist **Provenienz und Rechenschaft**, nicht ein universeller KI-Detektor.
 
-Ein Ergebnis darf nur dann als **gewiss** dargestellt werden, wenn die dazugehörige Aussage bzw. der Identitäts- und Signaturbeweis kryptografisch geprüft wurde. Ohne passende, gültige Evidenz lautet das Ergebnis **unbestimmt**. Fehlende KI-Metadaten, fehlende C2PA-Angaben oder fehlende Registry-Einträge beweisen keine menschliche Urheberschaft. Ein Self-Proof belegt eine geprüfte menschliche Identität bzw. ein Proof-of-Personhood-Kriterium; für sich allein beweist er **nicht**, dass diese Person einen bestimmten Inhalt erstellt hat.
+Ein Ergebnis darf nur dann als **gewiss** dargestellt werden, wenn ein passender kryptografischer Beweis geprüft wurde. Ohne passende, gültige Evidenz lautet es **unbestimmt**. Fehlende KI-Metadaten, C2PA-Angaben oder Registry-Einträge beweisen keine menschliche Urheberschaft. Ein Self-Proof belegt ein Proof-of-Personhood-Kriterium, beweist für sich allein aber nicht, dass die Person einen bestimmten Inhalt erstellt hat. Eine signierte Aussage belegt, wer sie abgegeben hat — nicht, dass sie wahr ist.
 
-Keine Dokumentation, Demo oder Oberfläche darf versprechen, Satya könne zweifelsfrei feststellen, ob beliebiger Inhalt durch irgendeine KI entstanden ist. Signierte Herkunftserklärungen bleiben Aussagen ihrer Unterzeichner und sind nicht automatisch wahr.
+Keine Oberfläche oder Dokumentation darf versprechen, Satya könne zweifelsfrei feststellen, ob beliebiger Inhalt durch irgendeine KI entstanden ist.
 
 ## Nutzerentscheidungen und erhaltener Gesprächsverlauf
 
-Die folgenden Formulierungen stammen aus den erhaltenen Nutzerbeiträgen. Die historische Reihenfolge ist erhalten; für frühere Beiträge sind nicht durchgängig Zeitstempel vorhanden.
+Die folgenden Formulierungen stammen aus den erhaltenen Nutzerbeiträgen. Die historische Reihenfolge ist erhalten; für frühere Beiträge sind nicht durchgängig Zeitstempel verfügbar.
 
 1. „ich will einen cryptotoken entwickeln dessen einziger Zweck ist KI von nicht KI zu unterscheiden und nicht KI zu authentifizieren“
 2. „entwickle Satyagiri, sodass er todsicher sagen kann ob ein Inhalt durch irgendeine KI generiert wurde“
@@ -35,40 +35,43 @@ Die folgenden Formulierungen stammen aus den erhaltenen Nutzerbeiträgen. Die hi
 16. Am 12. Oktober 2026: „Now continue the task based on the inherited context and files. Re-read all relevant skills to the current task before proceeding.“
 17. Am 12. Oktober 2026: „Bitte fortfahren.“
 18. Am 14. Oktober 2026: „lade den gesamten Inhalt dieser Konversation in einen relevanten Ordner auf GitHub hoch, sodass sie von einer zukünftigen KI wieder benutzt werden kann.“
-19. Am 14. Oktober 2026: „in die Satya repo von manuelpicard“ — die Zielauswahl bezieht sich auf das private Repository `manuelpicard/Satya`.
+19. Am 14. Oktober 2026: „in die Satya repo von manuelpicard“ — gemeint ist das private Repository `manuelpicard/Satya`.
 
-Daraus abgeleitete, weitergeltende Nutzerwünsche: Projektname **Satya** (nicht Satyagiri); Celo als Blockchain-Ökosystem; ein Soulbound-Menschennachweis; Hackathon-Nutzung zur Umsetzung und Sichtbarkeit; keine „gewisse“ Herkunftsaussage ohne kryptografischen Beleg; ansonsten **unbestimmt**; Kommunikation mit dem Nutzer auf Deutsch.
+Weitergeltende Wünsche: Name **Satya** (nicht Satyagiri); Celo; Soulbound-Menschennachweis; Hackathon-Nutzung zur Umsetzung/Sichtbarkeit; sichere Urteile nur bei kryptografischem Beleg, andernfalls **unbestimmt**; Kommunikation auf Deutsch.
 
-## Architektur und aktueller Code
+## Architektur und Status
 
-### Identität und Provenienz
+- **Identität:** Self Agent ID / Self-Proof-of-Personhood; frischer Proof und Agent-ID-Wallet-Eigentum werden geprüft.
+- **Aktuelle Celo-Provenienz:** `SatyaCelo` unterstützt Self-Human-, Self-Agent- und ERC-8004-Agent-Aussagen. Es ist ownerless und erlaubt, Selbstwidersprüchlichkeit nachzuweisen. ERC-8004-Agenten können nur `AI_GENERATED` erklären, keine menschliche Urheberschaft.
+- **Legacy-Registry:** `SatyaRegistry` ist ein separates HMN-/`HumanCredential`-basiertes Register mit Provider-/Fraud-Governance und Eigentümerrechten. Nicht mit dem ownerless `SatyaCelo` verwechseln.
+- **Soulbound Credential:** `contracts/src/credentials/SatyaHumanSBT.sol` implementiert ERC-5192. Claim/Refresh erfordert einen frischen Self-Proof; Recovery verlangt dieselbe verifizierte Person; Renounce verbrennt das Credential. Transfers/Freigaben sind gesperrt. Das Credential beweist keine Inhaltsautorenschaft. Es ist noch nicht deployed und hat keine Mint-/Recovery-UI.
+- **Frontend:** Next.js 15 / React 19 / Viem. Dateien (bis 50 MB) werden im Browser gehasht; Text wird als `satya-text-v1` normalisiert. Wallet-/Transaktionsfreigaben bleiben beim Nutzer.
+- **Python-Engine:** Separater FastAPI-/Uvicorn-Baum mit C2PA-Trust-Listen, Hashing, Metadaten-/Wasserzeichenhinweisen, EIP-712-Siegeln, Registerabfragen und deterministischer Urteilslogik. Optionaler x402-Endpunkt.
+- **x402:** Historische Entwicklung dokumentiert erfolgreiche Testnet-USDC-Abwicklung. Beim letzten lokalen Statuscheck war Port 8000 frei; ein temporärer Start meldete `celo: null`, `x402: null` (keine Runtime-Konfiguration). In der letzten Implementierungsrunde wurden keine Zahlung, Signatur oder Transaktion ausgelöst.
+- Die vollständige Modul-/Dateiinventur samt Rollen, Quellbaumgrenzen, Testabdeckung und Sicherheitsnotizen steht in [`module-inventory.md`](module-inventory.md).
 
-- **Menschennachweis:** Self Agent ID / Self-Proof-of-Personhood mit frischem Proof und einem personenbezogenen Nullifier. Die Wallet muss den betreffenden Agent ID besitzen.
-- **Provenienzregister:** Solidity-Verträge für signierte Ursprungserklärungen, AI-Agent-Erklärungen, Attester und Widersprüche. `SatyaCelo` unterstützt Self-Agent- und ERC-8004-Agentpfade. `SatyaRegistry` besitzt eigene Registry-Tests.
-- **Soulbound Credential:** `contracts/src/credentials/SatyaHumanSBT.sol` implementiert ERC-5192. Der Contract erlaubt Claim/Refresh auf Basis eines frischen Self-Proofs, Ablaufprüfung, explizite Recovery auf eine andere Wallet derselben verifizierten Person sowie Renounce/Burn. Transfer und Approvals sind gesperrt. Dieses Credential belegt keinen Inhaltsautor.
-- **Datenschutzprüfung vor Mainnet:** Das Contract-API exponiert den Nullifier nicht über einen Getter oder ein Event. Der Nullifier liegt aber in Contract-Storage; `private` in Solidity bedeutet keine Vertraulichkeit auf einer öffentlichen Chain. Die öffentliche Speicherung und Linkbarkeit sind vor Mainnet gesondert zu bewerten.
-- **Frontend:** Next.js 15 / React 19 mit Viem; Datei-/Text-Hashing im Browser, Celo-Sepolia-Abfragen, Wallet-Verbindung und Self-Agent-Prüfung. Eine Wallet-Signatur bzw. Transaktion wird vom Nutzer selbst bestätigt.
-- **Python-Engine/Backend:** Separater FastAPI-/Uvicorn-Projektbaum mit C2PA-, Metadaten-, Hash-, Siegel- und Verdict-Prüfungen sowie optionalem x402-Endpunkt. Der historische lokale Python-Testbestand hat 20 Tests.
-- **x402:** Der frühere Entwicklungsstand dokumentiert erfolgreich erprobte Testnet-USDC-Zahlungen. Beim letzten Statuscheck war der lokale Dienst auf Port 8000 nicht aktiv. Ein temporärer lokaler Start funktionierte, gab aber `celo: null` und `x402: null` zurück, weil in dieser Umgebung keine entsprechende Runtime-Konfiguration vorlag. In der aktuellen Abschlussarbeit wurde keine Zahlung signiert oder ausgelöst.
+### Wichtige Nullifier-/Datenschutzkorrektur (Audit 14. Oktober)
 
-### Netz und öffentlich bekannte Testnet-Adressen
+Eine frühere Handoff-Fassung behauptete fälschlich, kein Contract-API/Event exponiere den Nullifier. **Das trifft nicht auf `SatyaCelo` zu:** Event `Declared` enthält den vollen Nullifier; `attestation(s)` und `humanBehind()` geben ihn ebenfalls zurück. `celo_ledger.py` kürzt ihn nur in der JSON-Antwort; auf der öffentlichen Chain bleibt er vollständig lesbar. `SatyaRegistry` veröffentlicht eine HMN-`personId`. `SatyaHumanSBT` exponiert den Nullifier nicht über ein dediziertes Getter/Event, aber EVM-Storage ist grundsätzlich öffentlich lesbar. Es gibt daher keine Anonymitätsgarantie; vor Mainnet ist eine gezielte Datenschutz-/Linkability-Prüfung erforderlich.
+
+## Testnet-Adressen und Deployments
 
 - Celo Sepolia Chain ID: `11142220`
-- `SatyaCelo`: `0x58d5f2c2ac866D7828b7e2Bf1A3542C3536c3001` (im früheren Projektstand als verifiziert auf Blockscout dokumentiert)
+- `SatyaCelo`: `0x58d5f2c2ac866D7828b7e2Bf1A3542C3536c3001` (im früheren Projektstand auf Blockscout als verifiziert dokumentiert)
 - Self Agent ID Registry: `0x043DaCac8b0771DD5b444bCC88f2f8BBDBEdd379`
-- Test-USDC: `0x01C5C0122039549AD1493B8220cABEdD739BC44E`
+- ERC-8004 Sepolia Registry: `0x8004A818BFB912233c491871b3d84c89A494BD9e`; Satya-Agent-ID laut Projekt-README: `453`
+- x402-Test-USDC: `0x01C5C0122039549AD1493B8220cABEdD739BC44E`
 
-Diese Werte beziehen sich auf Sepolia/Testnet. Test-Token haben keinen Mainnet-Wert. Keine Mainnet-Deployment-Adresse für `SatyaHumanSBT` ist dokumentiert.
+Alle oben genannten Netz-/Tokenwerte beziehen sich auf Sepolia/Testnet. Test-Token haben keinen Mainnet-Wert. `SatyaHumanSBT` hat keine Deployment-Adresse; es gab kein Mainnet-Deployment.
 
-### Repository- und Teststatus
+## Quellcode, Tests und Demos
 
-- Der separate lokale Git-Arbeitsbaum `satya-agent` enthält App, `contracts/` und Docs. Sein Stand ist lokal committed unter `46fdf39` (`Add soulbound human credential and hackathon readiness`); in diesem Arbeitsbaum war kein GitHub-Remote konfiguriert. Dieser Commit wurde in der vorherigen Sitzung **nicht** zu GitHub gepusht.
-- OpenZeppelin Contracts ist exakt auf `v5.7.0`, `forge-std` exakt auf `v1.17.0` gepinnt und in `.gitmodules`/Gitlinks festgelegt. `git submodule update --init --recursive` lädt die Abhängigkeiten nach einem Clone.
-- Nach `forge clean` bestanden **60/60 Foundry-Tests**: 29 `SatyaCelo`, 17 `SatyaRegistry`, 14 `SatyaHumanSBT`.
-- **20/20 Python-Tests** bestanden. Das vollständige Hand-off-ZIP wurde entpackt und die Foundry- sowie Python-Tests darin erneut erfolgreich ausgeführt.
-- TypeScript-Prüfung und Next.js-Produktionsbuild waren im vorherigen Projektstand erfolgreich.
-- Der Contract ist geschrieben und getestet, aber **noch nicht deployed** und noch **nicht** mit Mint-/Recovery-Aktionen im Frontend verbunden.
-- Ein quellcodebereinigtes lokales Hand-off-ZIP wurde erzeugt. Zugangsdaten und `.secrets` gehören nicht in ein GitHub-Archiv.
+- `satya-agent/` ist die separate lokale Git-Arbeitskopie mit Next.js-App, `contracts/` und Docs. Lokaler Commit: `46fdf39` (`Add soulbound human credential and hackathon readiness`); dort war kein GitHub-Remote konfiguriert.
+- Das Python-Paket `satya/` und seine Tests sind ein separater lokaler Projektbaum ohne Git-Repository. Die Engine und der Contract-/App-Quellcode wurden **nicht** in dieses private GitHub-Kontextarchiv kopiert; `manuelpicard/Satya` enthält hier nur Dokumentation.
+- Solidity-Abhängigkeiten sind per Git-Submodule gepinnt: OpenZeppelin `v5.7.0`, `forge-std` `v1.17.0`; nach Clone `git submodule update --init --recursive`.
+- Nach `forge clean` bestanden **60/60 Foundry-Tests** (29 `SatyaCelo`, 17 `SatyaRegistry`, 14 SBT) und **20/20 Python-Tests**. Auch das Übergabe-ZIP wurde entpackt und die Contract-/Python-Tests darin erfolgreich ausgeführt. TypeScript-Prüfung und Next.js-Produktionsbuild waren im vorherigen Projektstand erfolgreich.
+- Das Demo-Korpus enthält 22 Fälle. Die dokumentierte interne Stichprobe ergab 9 sichere Urteile, davon eines falsch; im kleinen Korpus wurden keine menschlichen Inhalte fälschlich als KI eingeordnet. Dies ist kein generalisierbarer Genauigkeitsnachweis.
+- Es gibt lokale Demo-CA-/Anvil-Schlüsselmaterialien und den `/api/demo/siegeln`-Pfad. Diese sind nur für Demonstration/Tests bestimmt; Schlüsselwerte gehören nicht ins Archiv und dürfen nie produktiv verwendet werden.
 
 ## Hackathon: Agents on Open Rails
 
@@ -76,19 +79,19 @@ Offizielle Eventseite: <https://www.loops.house/agents-on-open-rails> (zuletzt g
 
 - Anmelde- und Einreichungsfrist: **9. November 2026, 09:00 GMT**; Gewinnerbekanntgabe: 13. November 2026.
 - Für die Wertung zählt Celo **Mainnet**; Testnet-Transaktionen zählen nicht.
-- Der vom Event-Eintrag ausgestellte Attribution Tag muss bereits vor der ersten relevanten Transaktion eingebaut sein und jede wertbare Transaktion begleiten.
-- Agent-Wallet dem Event-Eintrag hinzufügen und deren ERC-8004-Identität vor der Frist aus genau dieser Wallet registrieren.
-- Bei der Anmeldung ist ein **öffentliches GitHub-Repository** anzugeben, das während der Bewertung erreichbar bleibt.
-- Die Eventregeln sagen, dass der Code während des Hackathons geschrieben wird. Bei einer vorhandenen Basis sollte die Zulässigkeit mit dem Veranstalter geklärt und die während des Hackathons entstandene Arbeit nachvollziehbar dokumentiert werden.
-- Mögliche Richtungen: `Build with buy` erfordert die passende Integration, bei der der Agent für eine externe Leistung bezahlt; `USA₮ with x402` erfordert reale Mainnet-Abwicklung mit USA₮. Der bestehende Sepolia-/Test-USDC-Flow erfüllt das nicht.
+- Der Event-Attribution-Tag muss vor der ersten relevanten Transaktion eingebaut sein und jede wertbare Transaktion begleiten.
+- Agent-Wallet dem Event-Eintrag hinzufügen und deren ERC-8004-Identität vor Frist aus genau dieser Wallet registrieren.
+- Bei Anmeldung ist ein **öffentliches GitHub-Quellcode-Repository** anzugeben, das zur Bewertung erreichbar bleibt.
+- Die Regeln sagen, der Code werde während des Hackathons geschrieben. Für ein bereits begonnenes Projekt die Zulässigkeit mit dem Veranstalter klären.
+- Mögliche Richtungen: `Build with buy` verlangt passende Bezahlung externer Leistungen; `USA₮ with x402` verlangt reale Mainnet-Abwicklung mit USA₮. Der aktuelle Sepolia-/Test-USDC-Flow erfüllt dies nicht.
 
-Satya ist in diesem Zustand **nicht einreichungsbereit**: kein dokumentierter Mainnet-Beitrag, kein nachgewiesener Event-Attribution-Tag, keine bestätigte ERC-8004-Verknüpfung mit dem Event-Eintrag und kein öffentliches Satya-GitHub-Remote. Eine Veröffentlichung des Gesprächskontexts in `manualai.org` würde diese Source-Code- und Hackathon-Lücken nicht schließen.
+Satya war im geprüften Stand **nicht einreichungsbereit**: kein dokumentierter Mainnet-Beitrag, kein nachgewiesener Attribution-Tag, keine bestätigte ERC-8004-Verknüpfung mit dem Event-Eintrag und kein öffentliches Satya-Quellcode-Repository. Das private Gesprächsarchiv schließt diese Source-Code- und Hackathon-Lücken nicht.
 
 ## Nächste Schritte für zukünftige KI-Sitzungen
 
-1. Vor jeder Implementierung den aktuellen Code, Deployments und Nutzerwünsche erneut prüfen; dieses Dokument ist Kontext, nicht unveränderliche Spezifikation.
-2. Vor Mainnet entscheiden, ob der Nullifier-Storage mit den gewünschten Privacy-Eigenschaften vereinbar ist.
-3. SBT auf einer ausdrücklich freigegebenen Chain deployen und Mint/Recovery/Expiry im Frontend integrieren; Deployment benötigt eine reale Wallet-Transaktion und ist nicht automatisch autorisiert.
-4. x402-Backend erst nach Bereitstellung der erforderlichen Konfiguration starten; keine Zahlungs- oder Signaturaktion ohne separate Freigabe auslösen.
-5. Für den Hackathon zuerst Track-Fit und Umgang mit bestehendem Code mit dem Veranstalter klären; Attribution Tag, ERC-8004-Verknüpfung, öffentliches Quellcodeziel und Mainnet-Nachweise vorbereiten.
-6. Vor öffentlichem Push den genauen Zielpfad, die Sichtbarkeit und den tatsächlich veröffentlichten Inhalt prüfen. Diese Kontextnotiz veröffentlicht keinen Satya-Quellcode; das Source-Repository bleibt separat und hat kein konfiguriertes GitHub-Remote.
+1. Vor Implementierungen aktuellen Quellcode, Deployments, Chain-Daten und Nutzerwünsche erneut prüfen; dieses Archiv ist ein zeitgebundener Kontext, keine unveränderliche Spezifikation.
+2. Vor Mainnet Nullifier-Linkability/Datenschutz untersuchen und gegebenenfalls das On-chain-Datenmodell ändern.
+3. SBT erst nach separater Freigabe auf einer gewählten Chain deployen und Mint/Recovery/Expiry im Frontend integrieren.
+4. x402-Backend erst mit vollständiger Runtime-Konfiguration starten; keine Zahlung, Wallet-Signatur oder Transaktion ohne die jeweils erforderliche Nutzerfreigabe.
+5. Vor Hackathon-Einreichung Track-Fit und vorhandene Codebasis mit dem Veranstalter klären; Attribution Tag, ERC-8004-Verknüpfung und Mainnet-Nachweise erbringen.
+6. Dieses private Kontextarchiv nicht ohne neue Freigabe öffentlich spiegeln. Eine separate öffentliche Source-Code-Veröffentlichung braucht ein festgelegtes Ziel und die Prüfung der genauen Dateien.
