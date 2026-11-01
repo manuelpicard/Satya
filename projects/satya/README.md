@@ -1,19 +1,20 @@
-# Satya — privates Projekt- und Gesprächsarchiv
+# Satya — privates Projekt-, Quellcode- und Gesprächsarchiv
 
-Dieses Verzeichnis bewahrt einen für zukünftige KI-Sitzungen aufbereiteten Satya-Projektkontext. Es ist **privat** und darf nicht in ein öffentliches Repository gespiegelt werden.
+Dieses Verzeichnis bewahrt den für zukünftige KI-Sitzungen aufbereiteten Satya-Projektkontext **und den aktuellen vollständigen Quellcode-Snapshot**. Das Repository ist **privat** und darf nicht öffentlich gespiegelt werden.
 
-## Inhalt
+## Schnellstart für eine neue KI
 
-- [`context/conversation-handoff.md`](context/conversation-handoff.md) — frühere Nutzeranforderungen, technische Entscheidungen, Status und nächste Schritte.
-- [`context/current-chat-handoff-2026-11-01.md`](context/current-chat-handoff-2026-11-01.md) — aktueller Übergabestand einschließlich der Arbeit vom 26. Oktober, verifizierter Tests, Code-Snapshots und offener Review-Risiken.
-- [`context/module-inventory.md`](context/module-inventory.md) — geprüfte Modulkarte für Python-Engine/API, Next.js-dApp, Solidity-Verträge, Tests und Demo.
-- [`context/hackathon-plan.md`](context/hackathon-plan.md), [`context/mainnet-research.md`](context/mainnet-research.md), [`context/submission-draft.md`](context/submission-draft.md) — aktuelle Hackathon-Planung, Recherche und Einreichungsentwurf.
-- [`work-in-progress/2026-11-01/`](work-in-progress/2026-11-01/README.md) — Quelltext-Snapshots der letzten Sandbox-Arbeit. **Nicht freigegeben und nicht als Produktionscode behandeln.**
+1. Zuerst [`context/current-chat-handoff-2026-11-01.md`](context/current-chat-handoff-2026-11-01.md) lesen.
+2. Vollständiger Code: [`source/2026-11-01/`](source/2026-11-01/README.md). Darin liegen beide Wurzeln `satya-agent/` (Frontend, Solidity) und `satya/` (Python-Engine/API).
+3. Vor produktiver Übernahme die offenen Punkte und Testgrenzen im Handoff beachten. Der Source-Snapshot ist eine datierte Kopie ohne Git-Historie; er ist kein Beleg für Security-Audit, Deployment oder Hackathon-Einreichung.
 
-## Wiederverwendung und Datenschutz
+## Weitere Projektunterlagen
 
-- Das Handoff ist eine kuratierte Projekterinnerung, kein wortgetreues Volltranskript aller Assistentenantworten.
-- Vor einer neuen Implementierung den aktuellen Satya-Quellcode, Deployments, Chain-Daten, Fristen und Nutzerwünsche erneut prüfen.
-- Die Arbeitsentwürfe bilden getrennte lokale Python- und Next.js-Quellbäume ab und sind keine integrierte Git-Arbeitskopie. Gegen die echte Source-Repo-Version diffen und testen.
-- Keine privaten Schlüssel, Seed-Phrasen, Zugangsdaten, Wallet-Geheimnisse oder verborgenen System-/Entwicklerinstruktionen ergänzen.
-- Keine Wallet-Signatur, Mainnet-Transaktion, Zahlung, Registrierung oder öffentliche Einreichung ohne die jeweils erforderliche separate Freigabe ausführen.
+- [`context/conversation-handoff.md`](context/conversation-handoff.md) — frühere kuratierte Projekterinnerung.
+- [`context/module-inventory.md`](context/module-inventory.md) — Modulkarte für Python-Engine/API, Next.js-dApp, Solidity-Verträge, Tests und Demo.
+- [`context/hackathon-plan.md`](context/hackathon-plan.md), [`context/mainnet-research.md`](context/mainnet-research.md), [`context/submission-draft.md`](context/submission-draft.md) — Hackathon-Planung, Recherche und Einreichungsentwurf.
+- [`work-in-progress/2026-11-01/`](work-in-progress/2026-11-01/README.md) — isolierte Einzeldatei-Snapshots der jüngsten x402-/Attribution-Änderungen; zur schnellen Review, nicht anstelle des vollständigen Source-Baums.
+
+## Datenschutz und Sicherheit
+
+Das Handoff ist eine kuratierte Erinnerung, kein wortgetreues Gesprächstranskript. Der Source-Snapshot lässt lokale `.env`-Dateien, Python-/Foundry-/Next-Buildartefakte und `*.key`-Dateien weg. `server.py` enthält feststehende lokale Anvil-Demo-Keys, die ausschließlich für eine lokale Testchain vorgesehen sind; niemals auf Mainnet verwenden. Keine echten privaten Schlüssel, Seeds, Zugangsdaten oder API-Tokens hinzufügen. Keine Wallet-Signatur, Mainnet-Transaktion, Zahlung, Registrierung oder öffentliche Veröffentlichung ohne separate Nutzerfreigabe.
