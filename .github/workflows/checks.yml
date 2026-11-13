@@ -1,0 +1,22 @@
+name: Checks
+
+# Leichte Prüfung für das Archiv: Alle Python-Dateien müssen sich übersetzen lassen.
+# Der aktive Code mit vollen Tests liegt in manuelpicard/Satya-Celo.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python-syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m compileall -q -x '/lib/|/node_modules/' projects
